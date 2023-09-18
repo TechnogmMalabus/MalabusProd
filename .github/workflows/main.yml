@@ -24,7 +24,7 @@ jobs:
       #   timeout-minutes: 5
       #   env:
       #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-         - name: ACR build and Push -frontend
+      - name: ACR build and Push -frontend
         id: build-push-acr
      
         uses: azure/acr-build@v1
