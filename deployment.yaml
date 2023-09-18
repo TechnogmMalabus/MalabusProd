@@ -16,7 +16,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: azure-lcg-back
-        image: mycontainerg.azurecr.io/azuredocs/college-assignment:backend
+        image: mycontainerng.azurecr.io/azuredocs/college-assignment:backend
         env:
         - name: ALLOW_EMPTY_PASSWORD
           value: "yes"
@@ -57,7 +57,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: azure-lcg-front
-        image: mycontainerg.azurecr.io/azuredocs/college-assignment:frontend
+        image: mycontainerng.azurecr.io/azuredocs/college-assignment:frontend
         ports:
         - containerPort: 80
         resources:
