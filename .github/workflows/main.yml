@@ -36,7 +36,7 @@ jobs:
           repository: ${{ secrets.repository }}
           image:  college-assignment
           folder: frontend2
-          branch: main
+          branch: master
           tag: frontend
       - name: ACR build and Push backend
         id: build-push-acr-bc
@@ -50,7 +50,7 @@ jobs:
           repository: ${{ secrets.repository }}
           image:  college-assignment
           folder: backend
-          branch: main
+          branch: master
           tag: backend
       - name: Azure login
         id: login
