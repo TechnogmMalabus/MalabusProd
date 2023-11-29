@@ -6,6 +6,6 @@ spec:
   targetRef:
     apiVersion: "apps/v1"
     kind: "Deployment"
-    name: "azure-lcg-front" # Name of your frontend Deployment
+    name: "azure-lcg-front"
   updatePolicy:
     updateMode: "Recreate"
