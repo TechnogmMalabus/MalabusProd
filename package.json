@@ -37,6 +37,7 @@
     "passport": "^0.6.0",
     "passport-facebook": "^3.0.0",
     "password-validator": "^5.2.1",
+    "twilio": "^4.17.0",
     "unique-username-generator": "^1.0.1",
     "validator": "^13.7.0"
   },
