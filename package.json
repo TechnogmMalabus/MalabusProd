@@ -5,6 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
+    "build": "npm build",
+    "prod": "npm start",
     "sonar": "sonar-scanner",
     "test": "newman run --disable-unicode ./Malabus.postman_collection.json"
   },
