@@ -2,7 +2,19 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-app.use(cors())
+
+const whitelist = ["https://mobile-8tzn.onrender.com/"]
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error("Not allowed by CORS"))
+    }
+  },
+  credentials: true,
+}
+app.use(cors(corsOptions))
 app.use(bodyParser.json());
 const userRoutes = require('./routes/user.routes');
 const agencyRoutes = require('./routes/agency.routes');
