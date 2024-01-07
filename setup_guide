@@ -1,0 +1,45 @@
+First let's connect github with our azure account:
+
+Service Connection GitHub to azure
+•	Goto azure portal and enter the below code in cmd prompt
+ 
+az ad sp create-for-rbac \
+    --name "ghActionAzure" \
+    --scope /subscriptions/your subsbcription ID HERE/resourceGroups/gr1 \
+    --role Contributor \
+    --sdk-auth
+
+•	Enter the value in github secrets as follow :
+
+GITHUB SECRETS NAME:	VALUE TO BE ENTERED
+service_principal:	The value of <clientId>.
+service_principal_password:	The value of <clientSecret>.
+subscription:	The value of <subscriptionId>.
+tenant:	The value of <tenantId>.
+registry:	mycontainerg
+repository:	azuredocs
+resource_group:	gr1
+cluster_name:	myakscluster
+AZURE_CREDENTIALS: The entire JSON output from the az ad sp create-for-rbac command
+
+then create the aks cluster in the azure account following default settings
+create the acr and link it to aks
+
+and run the github actions
+
+
+For the sonarqube:
+Goto below github URL, click deploy button, this will deploy SonarQube in azure app
+service resource.
+https://github.com/vanderby/SonarQube-AzureAppService
+Create or select -> subscription, resource group then leave the rest default values, then press
+Review + create
+
+• Browse through the app service in azure for the sonarqube application
+
+In the home page of sonarqube select create project manually, and in the second screen click on github
+actions. Then from the next screen, generate a token, and add as a secret namely
+‘SONAR_TOKEN’ in Github. Then take the sonarqube host url as mentioned value , and add this
+also secret namely ‘SONARQUBE_HOST’ in Github
+
+
